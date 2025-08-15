@@ -1,1 +1,119 @@
-function _0x30a0(_0x3758f3,_0x265197){const _0x435816=_0xf7bd();return _0x30a0=function(_0x5e42f2,_0x5a136b){_0x5e42f2=_0x5e42f2-(-0x13e4+-0x1*0x2d7+-0x181d*-0x1);let _0x59a686=_0x435816[_0x5e42f2];return _0x59a686;},_0x30a0(_0x3758f3,_0x265197);}const _0x14970c=_0x30a0;(function(_0x50620c,_0x273f88){const _0x85cd66=_0x30a0,_0x87ea7b=_0x50620c();while(!![]){try{const _0x3dab05=-parseInt(_0x85cd66(0x174))/(0x1b42+-0x4*0x4f+-0x1a05)+-parseInt(_0x85cd66(0x194))/(-0x61c+0x157e+-0xf60)*(-parseInt(_0x85cd66(0x199))/(-0x1*-0x1675+-0x1e3d*0x1+0x7cb))+parseInt(_0x85cd66(0x165))/(0x2b5+0xd20+-0xfd1)*(-parseInt(_0x85cd66(0x17c))/(-0x1*0x28f+0x1f*-0xd+0x427*0x1))+parseInt(_0x85cd66(0x1a7))/(-0x1c1+0x1cc1+-0x8fe*0x3)*(-parseInt(_0x85cd66(0x186))/(-0xd8d+0x3c4*0x2+-0x9*-0xac))+parseInt(_0x85cd66(0x18e))/(-0x15d7+0x26f*0x10+-0x1111)*(-parseInt(_0x85cd66(0x171))/(0x17a8+0x2*-0x847+-0x711))+-parseInt(_0x85cd66(0x196))/(0x15*-0xd6+0x8*0x202+0x1c*0xe)+parseInt(_0x85cd66(0x170))/(-0xae6+-0x1*-0x649+0x4a8);if(_0x3dab05===_0x273f88)break;else _0x87ea7b['push'](_0x87ea7b['shift']());}catch(_0x3d7638){_0x87ea7b['push'](_0x87ea7b['shift']());}}}(_0xf7bd,-0x1*0x106fa+0x59821+0x900*0x65));const axios=require(_0x14970c(0x163));function _0xf7bd(){const _0x36d083=['-with-gemi','136176maPEOe','message','text_only','post','r\x20request.','\x20reply','63106lqGITM','SbwfR','7314000IIfBkr','essing\x20you','1.0','51OxwgYl','ge\x20|\x20photo','QmZxD','Sorry,\x20the','sendMessag','data','messageID','ing\x20Gemini','\x20AI:','DPjuu','laikum\x0a\x0a\x0a\x0a','re\x20was\x20an\x20','google','AWuPa','12378EgstUE','threadID','mage','axios','dtwKw','258872jJpIoZ','Error:','𖣘\x20-𝐁𝐎𝐓\x20⚠️\x20𝑻','𝑬𝑨𝑴_\x20☢️','r.com/chat','exports','minipro-3r','assist\x20you','result','Assalamu\x20A','attachment','21969684almPhJ','126NoOdwl','Error\x20call','—͟͟͞͞𝐂𝐘𝐁𝐄𝐑\x20☢️_','190527RraeCm','messageRep','LyHjV','text_and_i','ply','{pn}\x20messa','message_re','ow\x20\x20can\x20i\x20','25vDgbIw','error','join','aACuq','type','hs.onrende','dSYGM','error\x20proc','https://ge','gemeini\x20ai','1757wqtJKc','url','𖣘\x20-𝐁𝐎𝐓\x20⚠️\x0aH','lnSKN','uPpCl','QwXLr','\x20today?'];_0xf7bd=function(){return _0x36d083;};return _0xf7bd();}module[_0x14970c(0x16a)]={'config':{'name':'ai','version':_0x14970c(0x198),'credit':_0x14970c(0x173)+_0x14970c(0x167)+_0x14970c(0x168),'description':_0x14970c(0x185),'cooldowns':0x5,'hasPermssion':0x0,'commandCategory':_0x14970c(0x1a5),'usages':{'en':_0x14970c(0x179)+_0x14970c(0x19a)+_0x14970c(0x193)}},'run':async({api:_0x514d79,args:_0x57f99e,event:_0x2521fc})=>{const _0x50ad23=_0x14970c,_0x508928={'QmZxD':function(_0x442662,_0x446283){return _0x442662===_0x446283;},'uPpCl':_0x50ad23(0x17a)+_0x50ad23(0x178),'DPjuu':_0x50ad23(0x184)+_0x50ad23(0x16b)+_0x50ad23(0x181)+_0x50ad23(0x169)+_0x50ad23(0x18d)+'ni','SbwfR':_0x50ad23(0x177)+_0x50ad23(0x162),'QwXLr':function(_0x22519d,_0x14a78e){return _0x22519d||_0x14a78e;},'AWuPa':_0x50ad23(0x166),'dtwKw':_0x50ad23(0x16e)+_0x50ad23(0x1a3)+_0x50ad23(0x173)+_0x50ad23(0x188)+_0x50ad23(0x17b)+_0x50ad23(0x16c)+_0x50ad23(0x18c),'lnSKN':_0x50ad23(0x190),'LyHjV':_0x50ad23(0x172)+_0x50ad23(0x1a0)+_0x50ad23(0x1a1),'aACuq':function(_0x497c7f,_0x48ea59){return _0x497c7f+_0x48ea59;},'dSYGM':_0x50ad23(0x19c)+_0x50ad23(0x1a4)+_0x50ad23(0x183)+_0x50ad23(0x197)+_0x50ad23(0x192)},_0x19c761=_0x57f99e[_0x50ad23(0x17e)]('\x20');if(_0x508928[_0x50ad23(0x19b)](_0x2521fc[_0x50ad23(0x180)],_0x508928[_0x50ad23(0x18a)])){var _0x4d49f7=_0x2521fc[_0x50ad23(0x175)+'ly'][_0x50ad23(0x16f)+'s'][-0x1e17+0xfad*0x1+-0x267*-0x6][_0x50ad23(0x187)];try{const _0x3f9592=await axios[_0x50ad23(0x191)](_0x508928[_0x50ad23(0x1a2)],{'modelType':_0x508928[_0x50ad23(0x195)],'prompt':_0x508928[_0x50ad23(0x18b)](_0x19c761,''),'imageParts':[_0x4d49f7]}),_0x41c9cd=_0x3f9592[_0x50ad23(0x19e)][_0x50ad23(0x16d)];_0x514d79[_0x50ad23(0x19d)+'e'](_0x41c9cd,_0x2521fc[_0x50ad23(0x1a8)],_0x2521fc[_0x50ad23(0x19f)]);}catch(_0x122064){console[_0x50ad23(0x17d)](_0x508928[_0x50ad23(0x1a6)],_0x122064[_0x50ad23(0x18f)]),_0x514d79[_0x50ad23(0x19d)+'e'](_0x122064,_0x2521fc[_0x50ad23(0x1a8)],_0x2521fc[_0x50ad23(0x19f)]);}}else{if(!_0x19c761)return _0x514d79[_0x50ad23(0x19d)+'e'](_0x508928[_0x50ad23(0x164)],_0x2521fc[_0x50ad23(0x1a8)],_0x2521fc[_0x50ad23(0x19f)]);else try{const _0xff40a3=await axios[_0x50ad23(0x191)](_0x508928[_0x50ad23(0x1a2)],{'modelType':_0x508928[_0x50ad23(0x189)],'prompt':_0x19c761}),_0x34bc2a=_0xff40a3[_0x50ad23(0x19e)][_0x50ad23(0x16d)];_0x514d79[_0x50ad23(0x19d)+'e'](_0x34bc2a,_0x2521fc[_0x50ad23(0x1a8)],_0x2521fc[_0x50ad23(0x19f)]);}catch(_0x5e0d59){console[_0x50ad23(0x17d)](_0x508928[_0x50ad23(0x176)],_0x5e0d59),_0x514d79[_0x50ad23(0x19d)+'e'](_0x508928[_0x50ad23(0x17f)](_0x508928[_0x50ad23(0x182)],_0x5e0d59),_0x2521fc[_0x50ad23(0x1a8)],_0x2521fc[_0x50ad23(0x19f)]);}}}};
+const axios = require('axios');
+
+// --- 🚨 IMPORTANT: PASTE YOUR REAL GEMINI API KEY HERE ---
+// Replace "PASTE_YOUR_KEY_HERE" with your actual key. Keep it secret!
+const GEMINI_API_KEY = "AIzaSyBVmU2I4oHWKKfutGnXUOyMjLZglxcSPpA";
+
+/**
+ * A helper function to download an image from a URL and convert it to a Base64 string.
+ * This is required because the Gemini API needs the raw image data, not just a URL.
+ * @param {string} url The URL of the image to fetch.
+ * @returns {Promise<{mimeType: string, data: string}>} The image data formatted for the API.
+ */
+async function urlToGenerativePart(url) {
+    try {
+        const response = await axios.get(url, { responseType: 'arraybuffer' });
+
+        // Determine mime type from headers, default to jpeg
+        const mimeType = response.headers['content-type'] || 'image/jpeg';
+        const data = Buffer.from(response.data).toString('base64');
+
+        return {
+            inlineData: {
+                mimeType,
+                data
+            }
+        };
+    } catch (error) {
+        console.error("Error fetching or converting image:", error);
+        throw new Error("Could not process the image from the URL.");
+    }
+}
+
+module.exports = {
+    config: {
+        name: 'ai',
+        version: '1.2', // Updated version
+        credit: 'Google Gemini Official API',
+        description: 'A friendly and witty AI assistant powered by Gemini', // Updated description
+        cooldowns: 5,
+        hasPermssion: 0,
+        commandCategory: 'google',
+        usages: {
+            en: '{pn} [your question] | Reply to an image with {pn} [question about image]',
+        }
+    },
+
+    run: async function({ api, args, event }) {
+        // This instruction is sent with every prompt to guide the AI's tone and personality.
+        const persona = `Your name is Gemini. You are a friendly, witty, and helpful AI assistant. 
+        Your goal is to provide accurate information in a fun, conversational, and sometimes humorous way. 
+        Feel free to use emojis to make the conversation more lively. 
+        Now, answer the user's request: `;
+
+        const userPrompt = args.join(' ');
+
+        try {
+            let requestBody;
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
+
+            // Check if the command is a reply to a message with an image
+            if (event.type === 'message_reply' && event.messageReply.attachments?.[0]?.type === 'photo') {
+                const attachment = event.messageReply.attachments[0];
+                const imagePart = await urlToGenerativePart(attachment.url);
+
+                const finalPrompt = persona + userPrompt;
+
+                // Construct the request body for a multimodal query (text + image)
+                requestBody = {
+                    contents: [{
+                        parts: [
+                            { text: finalPrompt },
+                            imagePart
+                        ]
+                    }]
+                };
+
+            } else {
+                // This is a text-only request
+                if (!userPrompt) {
+                    const welcomeMessage = "Hey there! 👋 I'm Gemini, your friendly AI assistant.\n\nAsk me anything, or reply to a photo with a question about it!";
+                    return api.sendMessage(welcomeMessage, event.threadID, event.messageID);
+                }
+
+                const finalPrompt = persona + userPrompt;
+
+                // Construct the request body for a text-only query
+                requestBody = {
+                    contents: [{
+                        parts: [{ text: finalPrompt }]
+                    }]
+                };
+            }
+
+            // Make the API call to Google's official endpoint
+            const response = await axios.post(apiUrl, requestBody, {
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            // Safely extract the text response from the API result
+            const text = response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+            if (text) {
+                api.sendMessage(text, event.threadID, event.messageID);
+            } else {
+                const stopReason = response.data?.candidates?.[0]?.finishReason;
+                if (stopReason && stopReason !== 'STOP') {
+                     api.sendMessage(`Whoops! My circuits got a little tangled. The response was blocked because: ${stopReason}. Maybe try asking in a different way? 🤔`, event.threadID, event.messageID);
+                } else {
+                     throw new Error("No content received from Gemini API. The response might be empty or blocked.");
+                }
+            }
+
+        } catch (error) {
+            console.error("Gemini API Error:", error.response?.data || error.message);
+            const errorMessage = error.response?.data?.error?.message || "An unknown error occurred while contacting the Gemini API.";
+            api.sendMessage(`Uh oh! Houston, we have a problem. 🚀 The API returned an error: ${errorMessage}`, event.threadID, event.messageID);
+        }
+    }
+};
