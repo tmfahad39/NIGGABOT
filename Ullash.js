@@ -1,13 +1,50 @@
-const { spawn } = require("child_process");
-const axios = require("axios");
+const { spawn, execSync } = require("child_process"); // Add execSync for synchronous execution
+// const axios = require("axios"); // axios is no longer needed if update check is removed
 const logger = require("./utils/log");
+const express = require('express');
+const path = require('path');
+const fs = require('fs'); // Needed to check for node_modules existence
+
+///////////////////////////////////////////////////////////
+//========= Dependency Check & Installation =========//
+///////////////////////////////////////////////////////////
+
+// Function to check if a package is available to be required
+function isPackageInstalled(packageName) {
+    try {
+        require.resolve(packageName);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
+// Function to ensure a specific dependency is installed
+function ensurePackageInstalled(packageName) {
+    if (!isPackageInstalled(packageName)) {
+        logger(`Package "${packageName}" not found. Attempting to install...`, "[ SETUP ]");
+        try {
+            // Using execSync to ensure installation completes before proceeding
+            // stdio: 'inherit' will show npm's output in your terminal
+            execSync(`npm install ${packageName}`, { stdio: 'inherit' });
+            logger(`Successfully installed "${packageName}".`, "[ SETUP ]");
+        } catch (error) {
+            logger(`Failed to install "${packageName}": ${error.message}`, "[ ERROR ]");
+            logger("Please run 'npm install @google/generative-ai' manually in your terminal.", "[ ERROR ]");
+            process.exit(1); // Exit if critical dependency cannot be installed
+        }
+    } else {
+        logger(`Package "${packageName}" already installed.`, "[ SETUP ]");
+    }
+}
+
+// Call this at the very beginning to ensure dependencies are met
+ensurePackageInstalled("@google/generative-ai");
+
 
 ///////////////////////////////////////////////////////////
 //========= Create website for dashboard/uptime =========//
 ///////////////////////////////////////////////////////////
-
-const express = require('express');
-const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -58,20 +95,6 @@ function startBot(message) {
         logger(`An error occurred: ${JSON.stringify(error)}`, "[ Error ]");
     });
 };
-
-////////////////////////////////////////////////
-//========= Check update from Github =========//
-////////////////////////////////////////////////
-
-axios.get("https://raw.githubusercontent.com/cyber-ullash/cyber-bot/main/data.json")
-    .then((res) => {
-        logger(res.data.name, "[ NAME ]");
-        logger(`Version: ${res.data.version}`, "[ VERSION ]");
-        logger(res.data.description, "[ DESCRIPTION ]");
-    })
-    .catch((err) => {
-        logger(`Failed to fetch update info: ${err.message}`, "[ Update Error ]");
-    });
 
 // Start the bot
 startBot();
