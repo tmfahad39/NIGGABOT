@@ -15,19 +15,21 @@ try {
 // Now we can safely require the package
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-// NEW: A map to track users who are in an active conversation with the bot.
+// A map to track users who are in an active conversation with the bot.
 const conversations = new Map();
 
+// --- MODIFIED: Updated config for new commands ---
 module.exports.config = {
   name: "Obot",
-  version: "3.3.0", // Updated version for the fix
+  version: "3.5.0", // Incremented version
   hasPermssion: 0,
   credits: "Modified by AI Assistant",
-  description: "Greets users and responds with Gemini AI. Only replies to its own conversation thread.",
+  description: "Greets users and responds with Gemini AI. Use 'bot' or 'botstart' to begin and 'botstop' to end.",
   commandCategory: "Noprefix",
-  usages: "bot | reply to bot",
+  usages: "bot | botstart | botstop | reply to bot",
   cooldowns: 3,
 };
+// --------------------------------------------------
 
 // --- START OF GEMINI CONFIGURATION ---
 
@@ -45,28 +47,40 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
 module.exports.handleEvent = async function({ api, event, Users }) {
   const botID = api.getCurrentUserID();
   const senderID = event.senderID;
+  const messageBody = event.body.toLowerCase(); // Standardize for checks
 
-  // 1. Handle the initial trigger "bot"
-  if (event.body.toLowerCase() === "bot" && senderID !== botID) {
+  // --- MODIFIED: Handle initial triggers "bot" OR "botstart" ---
+  if ((messageBody === "bot" || messageBody === "botstart") && senderID !== botID) {
     const name = await Users.getNameUser(senderID);
     const msg = {
-      body: `Hello @${name}, I am powered by Gemini. You can ask me anything by replying to this message.`,
+      body: `Hello @${name}, I am powered by Gemini. You can ask me anything by replying to this message.\n\nType "botstop" at any time to end our conversation.`,
       mentions: [{
         tag: `@${name}`,
         id: senderID
       }]
     };
     
-    // NEW: Add the user to the conversation map to allow them to reply.
+    // Add the user to the conversation map to allow them to reply.
     conversations.set(senderID, true);
 
     return api.sendMessage(msg, event.threadID, event.messageID);
   }
+  // -------------------------------------------------------------
+  
+  // Handle the "botstop" command to end the conversation
+  if (messageBody === "botstop" && senderID !== botID) {
+    // Check if the user was actually in a conversation
+    if (conversations.has(senderID)) {
+      // Remove the user from the map to stop the bot from replying
+      conversations.delete(senderID);
+      return api.sendMessage("You have ended the conversation. I will no longer reply. Type 'bot' or 'botstart' to begin a new one.", event.threadID, event.messageID);
+    }
+    return; // Ignore if they weren't in a conversation
+  }
 
-  // 2. Handle when a user replies to the bot's message
-  // NEW: Added a check 'conversations.has(senderID)'
+  // Handle when a user replies to the bot's message
   if (event.messageReply && event.messageReply.senderID == botID && conversations.has(senderID)) {
-    const userPrompt = event.body; // This is the user's question
+    const userPrompt = event.body;
 
     // Add a "typing" indicator to show the bot is thinking
     api.sendTypingIndicator(event.threadID);
@@ -78,7 +92,6 @@ module.exports.handleEvent = async function({ api, event, Users }) {
       const geminiResponse = response.text();
 
       // Send the response from Gemini back to the user
-      // A reply to this message will also be handled, continuing the conversation.
       return api.sendMessage(geminiResponse, event.threadID, event.messageID);
 
     } catch (error) {
