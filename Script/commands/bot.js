@@ -1,15 +1,29 @@
-// We need to require the package we just installed
+// --- START OF DEPENDENCY INSTALLER ---
+// This block checks if the required package is installed and installs it if not.
+try {
+    require.resolve("@google/generative-ai");
+} catch (e) {
+    console.log("[DEPENDENCY] @google/generative-ai not found, installing...");
+    const { execSync } = require("child_process");
+    // Using --save will add it to your package.json if it exists
+    execSync("npm install @google/generative-ai --save");
+    console.log("[DEPENDENCY] Successfully installed @google/generative-ai.");
+}
+// --- END OF DEPENDENCY INSTALLER ---
+
+
+// Now we can safely require the package
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 module.exports.config = {
   name: "Obot",
-  version: "3.0.0", // Upgraded to Gemini version!
+  version: "3.2.0", // Added built-in dependency installer
   hasPermssion: 0,
   credits: "Modified by AI Assistant",
-  description: "Greets users and responds with Gemini AI.",
+  description: "Greets users and responds with Gemini AI. Automatically installs dependencies.",
   commandCategory: "Noprefix",
   usages: "bot | reply to bot",
-  cooldowns: 5,
+  cooldowns: 3,
 };
 
 // --- START OF GEMINI CONFIGURATION ---
@@ -19,7 +33,8 @@ const API_KEY = "AIzaSyBVmU2I4oHWKKfutGnXUOyMjLZglxcSPpA";
 
 // Initialize the Google Generative AI with your key
 const genAI = new GoogleGenerativeAI(API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+// Using the lighter and faster Flash model for quick responses
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
 
 // --- END OF GEMINI CONFIGURATION ---
 
