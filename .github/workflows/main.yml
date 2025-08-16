@@ -27,7 +27,9 @@ jobs:
 
     # Step to install dependencies
     - name: Install dependencies
-      run: npm install
+      run: |
+        npm install
+        npm install @google/generative-ai
 
     # Step to run the bot with the correct port
     - name: Start the bot
