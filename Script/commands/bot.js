@@ -15,12 +15,15 @@ try {
 // Now we can safely require the package
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
+// NEW: A map to track users who are in an active conversation with the bot.
+const conversations = new Map();
+
 module.exports.config = {
   name: "Obot",
-  version: "3.2.0", // Added built-in dependency installer
+  version: "3.3.0", // Updated version for the fix
   hasPermssion: 0,
   credits: "Modified by AI Assistant",
-  description: "Greets users and responds with Gemini AI. Automatically installs dependencies.",
+  description: "Greets users and responds with Gemini AI. Only replies to its own conversation thread.",
   commandCategory: "Noprefix",
   usages: "bot | reply to bot",
   cooldowns: 3,
@@ -41,22 +44,28 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
 
 module.exports.handleEvent = async function({ api, event, Users }) {
   const botID = api.getCurrentUserID();
+  const senderID = event.senderID;
 
   // 1. Handle the initial trigger "bot"
-  if (event.body.toLowerCase() === "bot" && event.senderID !== botID) {
-    const name = await Users.getNameUser(event.senderID);
+  if (event.body.toLowerCase() === "bot" && senderID !== botID) {
+    const name = await Users.getNameUser(senderID);
     const msg = {
       body: `Hello @${name}, I am powered by Gemini. You can ask me anything by replying to this message.`,
       mentions: [{
         tag: `@${name}`,
-        id: event.senderID
+        id: senderID
       }]
     };
+    
+    // NEW: Add the user to the conversation map to allow them to reply.
+    conversations.set(senderID, true);
+
     return api.sendMessage(msg, event.threadID, event.messageID);
   }
 
   // 2. Handle when a user replies to the bot's message
-  if (event.messageReply && event.messageReply.senderID == botID) {
+  // NEW: Added a check 'conversations.has(senderID)'
+  if (event.messageReply && event.messageReply.senderID == botID && conversations.has(senderID)) {
     const userPrompt = event.body; // This is the user's question
 
     // Add a "typing" indicator to show the bot is thinking
@@ -69,6 +78,7 @@ module.exports.handleEvent = async function({ api, event, Users }) {
       const geminiResponse = response.text();
 
       // Send the response from Gemini back to the user
+      // A reply to this message will also be handled, continuing the conversation.
       return api.sendMessage(geminiResponse, event.threadID, event.messageID);
 
     } catch (error) {
